@@ -25,6 +25,8 @@ const options={
           title: "Job Portal Application",
           description: "Node Expressjs Job Portal Application",
         },
+        
+        
         servers: [
           {
             url: "http://localhost:8080",
@@ -33,6 +35,9 @@ const options={
         ],
       },
       apis: ["./routes/*.js"],
+      
+
+      
 };
 const spec=swaggerDoc(options);
 

@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import userModel from "../models/userModel.js";
 
 export const updateController= async (req,res,next)=>{
@@ -19,4 +20,33 @@ export const updateController= async (req,res,next)=>{
         user,
         token
     })
+}
+export const getuserController= async(req,res,next)=>{
+    try {
+        const user=await userModel.findOne({_id:req.body.user.userId});
+        if (!user){
+            return res.status(400).json("user Not Found");
+        }
+        else{
+            user.password=undefined;
+            data=user;
+            res.status(200).send({
+                success:true,
+                message:"Get user Successfully",
+                data,
+            })
+
+        }
+        
+    } catch (error) {
+        res.status(400).send({
+            success:false,
+            message:"Error Occurs",
+            error,
+        })
+        
+    }
+    
+
+    
 }

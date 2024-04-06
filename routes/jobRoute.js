@@ -34,7 +34,7 @@ const router = express.Router();
  *          type: string
  *          description: user location city or country
  *        createdBy:
- *          
+ *          type: 
  *          description: who created this job
  *      example:
  *        id: GDHJGD788BJBJ
@@ -64,6 +64,7 @@ const router = express.Router();
  *         application/json:
  *           schema:
  *             $ref: '#/components/schemas/Jobs'
+ *      
  *      responses:
  *        200:
  *          description: job created successfully
